@@ -1,0 +1,12 @@
+#container-title {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.userfavorites-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
