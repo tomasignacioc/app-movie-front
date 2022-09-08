@@ -8,9 +8,11 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
+import AuthContext from '../context/AuthContext';
 
 export default function SimpleBottomNavigation() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
+  const { auth, setAuth } = React.useContext(AuthContext);
   let navigate = useNavigate();
 
   return (
@@ -28,8 +30,10 @@ export default function SimpleBottomNavigation() {
         >
           <BottomNavigationAction label="Ranking" icon={<StarIcon fontSize='large' />} />
           <BottomNavigationAction label="Home" icon={<HomeIcon fontSize='large' />} />
-          <BottomNavigationAction label="SignIn" icon={<PersonPinIcon fontSize='large' />} />
-          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon fontSize='large' />} />
+          {auth.token ?
+            <BottomNavigationAction label="Favorites" icon={<FavoriteIcon fontSize='large' />} /> :
+            <BottomNavigationAction label="SignIn" icon={<PersonPinIcon fontSize='large' />} />
+          }
         </BottomNavigation>
       </Box>
     </div>
