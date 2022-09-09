@@ -39,7 +39,7 @@ export default function SignUp() {
       password: data.get('password'),
     })
       .then(function (response) {
-        if (response.status === 200) {
+        if (response.status === 201) {
           toast.success('Account successfully created!')
         }
       })

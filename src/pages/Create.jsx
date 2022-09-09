@@ -48,7 +48,7 @@ export default function Create() {
     }
     axios.post('api/movie', movieData)
       .then(function (response) {
-        if (response.status === 200) {
+        if (response.status === 201) {
           toast.success('Movie successfully created!')
         }
       })
