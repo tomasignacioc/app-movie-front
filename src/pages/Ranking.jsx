@@ -13,7 +13,7 @@ export default function Ranking() {
   const [movies, setMovies] = React.useState([])
 
   React.useEffect(() => {
-    axios.get('/api/movie/ranking')
+    axios.get('api/movie/ranking')
       .then(function (response) {
         setMovies(response.data)
       })

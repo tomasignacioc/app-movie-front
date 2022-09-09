@@ -7,7 +7,7 @@ function Home() {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    axios.get('/api/movie')
+    axios.get('api/movie')
       .then(function (response) {
         setMovies(response.data)
       })
