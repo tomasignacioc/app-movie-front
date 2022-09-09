@@ -6,6 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 import HomeIcon from '@mui/icons-material/Home';
+import CreateIcon from '@mui/icons-material/Create';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import AuthContext from '../context/AuthContext';
@@ -30,6 +31,7 @@ export default function SimpleBottomNavigation() {
         >
           <BottomNavigationAction label="Ranking" icon={<StarIcon fontSize='large' />} />
           <BottomNavigationAction label="Home" icon={<HomeIcon fontSize='large' />} />
+          <BottomNavigationAction label="Create" icon={<CreateIcon fontSize='large' />} />
           {auth.token ?
             <BottomNavigationAction label="Favorites" icon={<FavoriteIcon fontSize='large' />} /> :
             <BottomNavigationAction label="SignIn" icon={<PersonPinIcon fontSize='large' />} />

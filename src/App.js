@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import MovieDetail from './pages/MovieDetail';
 import UserFavorites from './pages/UserFavorites';
 import Ranking from './pages/Ranking';
+import Create from './pages/Create';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         />
         <Route path="home" element={<Home />} />
         <Route path="favorites" element={<UserFavorites />} />
+        <Route path="create" element={<Create />} />
         <Route path="movie/details/:id" element={<MovieDetail />} />
         <Route path="ranking" element={<Ranking />} />
         <Route path="signup" element={<SignUp />} />
