@@ -41,8 +41,7 @@ export default function SignIn() {
       password: data.get('password'),
     })
       .then(function (response) {
-        console.log(response);
-        if (response.statusText === "OK") {
+        if (response.status === 200) {
           toast.success('Logged in successfully !')
           setAuth({
             token: response.data.Authorization,
