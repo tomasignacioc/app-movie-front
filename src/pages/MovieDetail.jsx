@@ -85,7 +85,7 @@ export default function MovieDetail() {
       <CommentForm auth={auth} movieId={id} />
       <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
         {movieData.comments?.map(comment => (
-          <Comment key={comment.id} content={comment.content} />
+          <Comment key={comment.id} content={comment.content} username={comment.username} />
         ))}
       </div>
     </div>
