@@ -11,13 +11,13 @@ import Comment from '../layouts/Comment';
 import { Box } from '@mui/material';
 import toast, { Toaster } from 'react-hot-toast';
 import AuthContext from '../context/AuthContext'
+import CommentForm from '../components/CommentForm';
 
 export default function MovieDetail() {
   const params = useParams()
   const { id } = params
   const [movieData, setMovieData] = React.useState({})
   const { auth, setAuth } = React.useContext(AuthContext)
-
 
   React.useEffect(() => {
     axios.get(`api/movie/${id}`)
@@ -82,9 +82,12 @@ export default function MovieDetail() {
           </CardActions>
         </Box>
       </Card>
-      {movieData.comments?.map(comment => (
-        <Comment key={comment.id} content={comment.content} />
-      ))}
+      <CommentForm auth={auth} movieId={id} />
+      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {movieData.comments?.map(comment => (
+          <Comment key={comment.id} content={comment.content} />
+        ))}
+      </div>
     </div>
   );
 }
